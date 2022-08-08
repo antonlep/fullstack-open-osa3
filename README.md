@@ -1,1 +1,1 @@
-https://thawing-forest-10943.herokuapp.com/api/persons
+https://thawing-forest-10943.herokuapp.com/
