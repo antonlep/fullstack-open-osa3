@@ -8,6 +8,7 @@ morgan.token('body', function (req, res) { return JSON.stringify(req.body) })
 const app = express()
 
 app.use(express.json())
+app.use(express.static('build'))
 app.use(morgan(':method :url :response-time :body'))
 app.use(cors())
 
