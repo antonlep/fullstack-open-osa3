@@ -4,7 +4,7 @@ const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 mongoose.connect(url)
-    .then(result => {
+    .then(() => {
         console.log('connected to MongoDB')
     })
     .catch((error) => {
@@ -23,10 +23,10 @@ const personSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function (v) {
-                const myArray = v.split("-")
+                const myArray = v.split('-')
                 return myArray.length === 2 && (myArray[0].length === 2 || myArray[0].length === 3)
             },
-            message: props => `Phone number has to be in two parts divided by "-" and first part has to be 2 or 3 numbers long `
+            message: () => 'Phone number has to be in two parts divided by - and first part has to be 2 or 3 numbers long '
         }
     },
 })
